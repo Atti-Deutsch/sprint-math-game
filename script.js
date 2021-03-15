@@ -73,7 +73,7 @@ function updateBestScore() {
       // Return best score as number with one decimal
       const savedBestScore = Number(bestScoreArray[index].bestScore);
       // Update if the new final score is less or replacing zero
-      if (savedBestScore === 0 || savedBestScore > finalTimeDisplay) {
+      if (savedBestScore === 0 || savedBestScore > finalTime) {
         bestScoreArray[index].bestScore = finalTimeDisplay;
       }    }
   });
@@ -162,7 +162,7 @@ function select(guessedTrue) {
   valueY += 80; 
   itemContainer.scroll(0, valueY);
   // Add player gues to arrary
-  return guessedTrue ? playerGuessArray.push('true') : playerGuessArray('false');
+  return guessedTrue ? playerGuessArray.push('true') : playerGuessArray.push('false');
 }
 
 // Display Game Page
@@ -201,7 +201,7 @@ function createEquations() {
      wrongFormat[0] = `${firstNumber} x ${secondNumber + 1} = ${equationValue}`;
      wrongFormat[1] = `${firstNumber} x ${secondNumber} = ${equationValue - 1}`;
      wrongFormat[2] = `${firstNumber + 1} x ${secondNumber} = ${equationValue}`;
-     const formatChoice = getRandomInt(3);
+     const formatChoice = getRandomInt(2);
      const equation = wrongFormat[formatChoice];
      equationObject = { value: equation, evaluated: 'false' };
      equationsArray.push(equationObject);
